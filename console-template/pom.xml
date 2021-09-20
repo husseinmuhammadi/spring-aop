@@ -24,7 +24,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.javastudio.Application</mainClass>
+                            <mainClass>com.javastudio.tutorial.ConsoleApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
