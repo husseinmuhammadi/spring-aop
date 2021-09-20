@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>aop-template</module>
+        <module>spring-template</module>
     </modules>
 
     <properties>
