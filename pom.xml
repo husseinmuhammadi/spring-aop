@@ -9,10 +9,6 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <modules>
-        <module>spring-template</module>
-    </modules>
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -21,8 +17,14 @@
 
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
         <junit.platform.version>1.5.2</junit.platform.version>
-
     </properties>
+
+    <modules>
+        <module>console-template</module>
+        <module>spring-template</module>
+        <module>spring-context-xml-configuration</module>
+        <module>spring-aop-with-xml</module>
+    </modules>
 
     <build>
         <finalName>demo</finalName>
