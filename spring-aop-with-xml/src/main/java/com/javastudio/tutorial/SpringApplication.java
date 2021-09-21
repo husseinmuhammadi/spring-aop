@@ -11,6 +11,7 @@ public class SpringApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        logger.info("Spring context has been loaded!");
 
         ProductService productService = (ProductService) context.getBean("productService");
         productService.findAll();
