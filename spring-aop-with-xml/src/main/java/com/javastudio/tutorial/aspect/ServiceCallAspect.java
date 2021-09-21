@@ -13,4 +13,12 @@ public class ServiceCallAspect {
     public void afterProductService() {
         logger.info("after call product service");
     }
+
+    public void beforeServiceExecution() {
+        logger.info("before calling service");
+    }
+
+    public void afterServiceExecution() {
+        logger.info("after calling service");
+    }
 }
