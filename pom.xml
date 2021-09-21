@@ -24,6 +24,7 @@
         <module>spring-template</module>
         <module>spring-context-xml-configuration</module>
         <module>spring-aop-with-xml</module>
+        <module>spring-aop-with-annotations</module>
     </modules>
 
     <build>
