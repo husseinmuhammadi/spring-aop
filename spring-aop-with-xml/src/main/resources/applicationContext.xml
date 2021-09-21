@@ -9,10 +9,10 @@
 
     <aop:config>
         <aop:aspect id="loggingAspect" ref="serviceCallAspect">
-            <aop:pointcut id="productService"
+            <aop:pointcut id="productServiceCallPointCut"
                           expression="execution(* com.javastudio.tutorial.service.ProductService+.*(..))"/>
-            <aop:before method="beforeProductService" pointcut-ref="productService"/>
-            <aop:after method="afterProductService" pointcut-ref="productService"/>
+            <aop:before method="beforeProductService" pointcut-ref="productServiceCallPointCut"/>
+            <aop:after method="afterProductService" pointcut-ref="productServiceCallPointCut"/>
         </aop:aspect>
     </aop:config>
 </beans>
