@@ -6,18 +6,20 @@
 
     <bean name="productService" class="com.javastudio.tutorial.service.ProductService"/>
     <bean name="serviceCallAspect" class="com.javastudio.tutorial.aspect.ServiceCallAspect"/>
+    <bean name="productServiceCallAspect" class="com.javastudio.tutorial.aspect.ProductServiceCallAspect"/>
 
     <aop:config>
-        <aop:aspect id="loggingAspect" ref="serviceCallAspect">
-            <aop:pointcut id="productServiceCallPointcut"
-                          expression="execution(* com.javastudio.tutorial.service.ProductService+.*(..))"/>
+        <aop:pointcut id="serviceCallPointcut" expression="execution(* com.javastudio.tutorial.service.*Service+.*(..))"/>
+
+        <aop:aspect id="loggingAspect" ref="productServiceCallAspect">
+            <aop:pointcut id="productServiceCallPointcut" expression="execution(* com.javastudio.tutorial.service.ProductService+.*(..))"/>
             <aop:before method="beforeProductService" pointcut-ref="productServiceCallPointcut"/>
             <aop:after method="afterProductService" pointcut-ref="productServiceCallPointcut"/>
         </aop:aspect>
+
         <aop:aspect id="accessControlAspect" ref="serviceCallAspect">
-            <aop:pointcut id="serviceCallPointcut" expression="execution(* com.javastudio.tutorial.service.*Service+.*(..))"/>
             <aop:before method="beforeServiceExecution" pointcut-ref="serviceCallPointcut"/>
-            <aop:before method="afterServiceExecution" pointcut-ref="serviceCallPointcut"/>
+            <aop:after method="afterServiceExecution" pointcut-ref="serviceCallPointcut"/>
         </aop:aspect>
     </aop:config>
 </beans>
